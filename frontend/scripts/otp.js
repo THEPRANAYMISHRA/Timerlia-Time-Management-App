@@ -56,7 +56,7 @@ try {
 
     let userInfo = JSON.parse(localStorage.getItem("userInfo"))
     
-    fetch(`http://localhost:8008/user/signup?otp=${otp}`, {
+    fetch(`https://timerlia.onrender.com/user/signup?otp=${otp}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

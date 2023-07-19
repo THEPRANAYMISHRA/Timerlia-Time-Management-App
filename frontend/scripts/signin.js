@@ -6,7 +6,7 @@ document.getElementById("form").addEventListener("submit", (e) => {
     }
    console.log(payload);
    
-    fetch(`http://localhost:8008/user/login`,{
+    fetch(`https://timerlia.onrender.com/user/login`,{
         method: "POST",
         headers: {
             "Content-type": "application/json"
