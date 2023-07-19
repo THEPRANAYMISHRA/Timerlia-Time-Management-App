@@ -9,7 +9,7 @@ let form1 = document.getElementById("form");
         password: document.getElementById("password").value
     };
     console.log(payload)
-    fetch(`http://localhost:8008/user/signup`, {
+    fetch(`https://timerlia.onrender.com/user/signup`, {
         method: "POST",
         headers: {
             "Content-type": "application/json"
@@ -41,6 +41,6 @@ let form1 = document.getElementById("form");
 
 const googleAuthBtn = document.getElementById('google-auth-btn');
 googleAuthBtn.addEventListener('click', () => {
-    const authLink = 'http://localhost:8008/auth/google';
+    const authLink = 'https://timerlia.onrender.com/auth/google';
     window.location.href = authLink;
 });

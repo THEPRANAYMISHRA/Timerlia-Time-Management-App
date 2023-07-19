@@ -175,7 +175,7 @@ timerButton.addEventListener("click", () => {
             deskTimeElapsed,
             timeAtWorkTimeElapsed
         }
-        fetch(`http://localhost:8008/app/myTimeFrame`, {
+        fetch(`https://timerlia.onrender.com/app/myTimeFrame`, {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
