@@ -112,16 +112,21 @@ var screenTime;
 var screenTimeString
 
 window.onload = function () {
-    let showLoggedUser=document.getElementById("showLoggedUser")
-    let nameOfUser=localStorage.getItem("loggedUser")
-    if(nameOfUser){
-        showLoggedUser.innerText=nameOfUser.split(" ")[0].toUpperCase()
+    let token = localStorage.getItem('token')
+    if (!token) {
+        alert("Unauthorized User,Please Login First!")
+        window.location.href = './index.html'
+    }
+    let showLoggedUser = document.getElementById("showLoggedUser")
+    let nameOfUser = localStorage.getItem("loggedUser")
+    if (nameOfUser) {
+        showLoggedUser.innerText = nameOfUser.split(" ")[0].toUpperCase()
     }
 };
 
-document.getElementById("toLogoutUser").addEventListener("click",(e)=>{
+document.getElementById("toLogoutUser").addEventListener("click", (e) => {
     e.preventDefault()
-    window.location.href="index.html"
+    window.location.href = "index.html"
     localStorage.clear()
 })
 
@@ -206,9 +211,8 @@ timerButton.addEventListener("click", () => {
 function startFunction() {
     startTime = new Date();
     timeString = startTime.toLocaleTimeString();
-    // console.log(timeString);
     timerIntervalId = setInterval(updateTimerDisplay, 1000);
-    popUp.style.display = "block"
+    popUp.style.display = "flex"
 
     arrivalTimeElapsed = startTime.toLocaleTimeString()
     arrivalTime.textContent = arrivalTimeElapsed
@@ -278,8 +282,8 @@ function stopFunction() {
     if (productiveTimeElapsed === 0) {
         productiveAppsDiv.textContent = 'No data collected'
     } else {
-        productiveAppsDiv.textContent ='Produtive Time spent is' + ' ' + productiveTimeElapsed + parts[1]
-        localStorage.setItem("Productive",productiveTimeElapsed)
+        productiveAppsDiv.textContent = 'Produtive Time spent is' + ' ' + productiveTimeElapsed + parts[1]
+        localStorage.setItem("Productive", productiveTimeElapsed)
     }
 
 
@@ -287,15 +291,15 @@ function stopFunction() {
         unproductiveAppsDiv.textContent = 'No data collected'
     } else {
         unproductiveAppsDiv.textContent = 'Unprodutive Time spent is' + ' ' + unproductiveTimeElapsed + parts[1]
-        localStorage.setItem("Unproductive",unproductiveTimeElapsed)
+        localStorage.setItem("Unproductive", unproductiveTimeElapsed)
     }
 
 
     if (idleTimeElapsed === 0) {
         idleAppsDiv.textContent = 'No data collected'
     } else {
-        idleAppsDiv.textContent ='Idle Time spent' + ' ' + idleTimeElapsed + parts[1]
-        localStorage.setItem("Idle",idleTimeElapsed)
+        idleAppsDiv.textContent = 'Idle Time spent' + ' ' + idleTimeElapsed + parts[1]
+        localStorage.setItem("Idle", idleTimeElapsed)
     }
 }
 
@@ -363,46 +367,3 @@ unproductiveButton.addEventListener("click", () => {
 idleButton.addEventListener("click", () => {
     popUp.style.display = "none";
 })
-
-
-
-
-// for chat box
-// const chatBtn = document.getElementById("chat-btn");
-// const chatWindow = document.getElementById("chat-window");
-// const messageDisplay = document.getElementById("message-display");
-// const messageInput = document.getElementById("message-input");
-
-
-// const socket = new WebSocket("ws://localhost:8000");
-
-
-// socket.onopen = function (event) {
-//     console.log("WebSocket connection opened:", event);
-// };
-
-
-// socket.onmessage = function (event) {
-//     console.log("WebSocket message received:", event.data);
-//     messageDisplay.innerHTML += "<p>" + event.data + "</p>";
-// };
-
-
-// socket.onerror = function (event) {
-//     console.error("WebSocket error:", event);
-// };
-
-
-// messageInput.addEventListener("keydown", function (event) {
-//     if (event.key === "Enter") {
-//         event.preventDefault();
-//         const message = messageInput.value;
-//         console.log("Sending message:", message);
-//         socket.send(message);
-//         messageInput.value = "";
-//     }
-// });
-
-// chatBtn.addEventListener("click", function () {
-//     chatWindow.style.display = chatWindow.style.display === "none" ? "block" : "none";
-// });
