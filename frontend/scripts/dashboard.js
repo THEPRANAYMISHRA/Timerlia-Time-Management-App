@@ -112,24 +112,9 @@ var screenTime;
 var screenTimeString
 
 window.onload = function () {
-    let token = localStorage.getItem('token')
-    if (!token) {
-        alert("Unauthorized User,Please Login First!")
-        window.location.href = './index.html'
-    }
-    let showLoggedUser = document.getElementById("showLoggedUser")
-    let nameOfUser = localStorage.getItem("loggedUser")
-    if (nameOfUser) {
-        showLoggedUser.innerText = nameOfUser.split(" ")[0].toUpperCase()
-    }
+    screenTime = new Date();
+    screenTimeString = screenTime.toLocaleTimeString();
 };
-
-document.getElementById("toLogoutUser").addEventListener("click", (e) => {
-    e.preventDefault()
-    window.location.href = "index.html"
-    localStorage.clear()
-})
-
 
 
 
@@ -173,14 +158,21 @@ timerButton.addEventListener("click", () => {
         timerButton.textContent = 'Start';
         stopFunction();
         const payload = {
-            startTime,
+            arrivalTime,
             productiveTimeElapsed,
             unproductiveTimeElapsed,
             idleTimeElapsed,
             deskTimeElapsed,
             timeAtWorkTimeElapsed
         }
-        fetch(`https://timerlia.onrender.com/app/myTimeFrame`, {
+
+        localStorage.setItem("starttime", arrivalTime)
+        localStorage.setItem("productivetime", productiveTimeElapsed)
+        localStorage.setItem("unproductivetime", unproductiveTimeElapsed)
+        localStorage.setItem("idletime", idleTimeElapsed)
+        localStorage.setItem("desktime", deskTimeElapsed)
+        localStorage.setItem("timeatwork", timeAtWorkTimeElapsed)
+        fetch(`https://zany-jade-kingfisher-ring.cyclic.app/app/myTimeFrame`, {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
@@ -191,12 +183,18 @@ timerButton.addEventListener("click", () => {
 
                 if (res.data) {
                     console.log(res.data);
+                    // let starttime = res.data[0].startTime
                     localStorage.setItem("starttime", res.data[0].startTime)
+                    // let productivetime = res.data[0].productiveTimeElapsed
                     localStorage.setItem("productivetime", res.data[0].productiveTimeElapsed)
+                    // let unproductivetime = res.data[0].unproductiveTimeElapsed
                     localStorage.setItem("unproductivetime", res.data[0].unproductiveTimeElapsed)
+                    // let idletime = res.data[0].idleTimeElapsed
                     localStorage.setItem("idletime", res.data[0].idleTimeElapsed)
+                    // deskTime.textContent= res.data[0].deskTimeElapsed + parts[1]
                     localStorage.setItem("desktime", res.data[0].deskTimeElapsed)
                     localStorage.setItem("timeatwork", res.data[0].timeAtWorkTimeElapsed)
+                    // localStorage.setItem("productivity",res.data[0].productivityData)
                 }
 
                 console.log(res);
@@ -211,8 +209,9 @@ timerButton.addEventListener("click", () => {
 function startFunction() {
     startTime = new Date();
     timeString = startTime.toLocaleTimeString();
+    // console.log(timeString);
     timerIntervalId = setInterval(updateTimerDisplay, 1000);
-    popUp.style.display = "flex"
+    popUp.style.display = "block"
 
     arrivalTimeElapsed = startTime.toLocaleTimeString()
     arrivalTime.textContent = arrivalTimeElapsed
@@ -282,24 +281,24 @@ function stopFunction() {
     if (productiveTimeElapsed === 0) {
         productiveAppsDiv.textContent = 'No data collected'
     } else {
-        productiveAppsDiv.textContent = 'Produtive Time spent is' + ' ' + productiveTimeElapsed + parts[1]
-        localStorage.setItem("Productive", productiveTimeElapsed)
+        productiveAppsDiv.textContent = 'Time spent on Produtive apps is' + ' ' + productiveTimeElapsed + parts[1]
+
     }
 
 
     if (unproductiveTimeElapsed === 0) {
         unproductiveAppsDiv.textContent = 'No data collected'
     } else {
-        unproductiveAppsDiv.textContent = 'Unprodutive Time spent is' + ' ' + unproductiveTimeElapsed + parts[1]
-        localStorage.setItem("Unproductive", unproductiveTimeElapsed)
+        unproductiveAppsDiv.textContent = 'Time spent on Unprodutive apps is' + ' ' + unproductiveTimeElapsed + parts[1]
+
     }
 
 
     if (idleTimeElapsed === 0) {
         idleAppsDiv.textContent = 'No data collected'
     } else {
-        idleAppsDiv.textContent = 'Idle Time spent' + ' ' + idleTimeElapsed + parts[1]
-        localStorage.setItem("Idle", idleTimeElapsed)
+        idleAppsDiv.textContent = 'Time spent on Idle apps is' + ' ' + idleTimeElapsed + parts[1]
+
     }
 }
 
@@ -367,3 +366,7 @@ unproductiveButton.addEventListener("click", () => {
 idleButton.addEventListener("click", () => {
     popUp.style.display = "none";
 })
+
+
+
+
