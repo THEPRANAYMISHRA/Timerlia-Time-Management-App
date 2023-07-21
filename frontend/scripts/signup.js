@@ -39,8 +39,8 @@ let form1 = document.getElementById("form");
         .catch(err => console.log(err));
 });
 
-const googleAuthBtn = document.getElementById('google-auth-btn');
-googleAuthBtn.addEventListener('click', () => {
-    const authLink = 'https://timerlia.onrender.com/auth/google';
-    window.location.href = authLink;
-});
+// const googleAuthBtn = document.getElementById('google-auth-btn');
+// googleAuthBtn.addEventListener('click', () => {
+//     const authLink = 'https://timerlia.onrender.com/auth/google';
+//     window.location.href = authLink;
+// });
