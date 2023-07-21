@@ -105,7 +105,7 @@
   padding: 1rem;
   max-width: 30%;
   min-width: 200px;
-  background: #ffffff;
+  background: #787878;
   border-radius: 1rem;
   position: fixed;
   top: 50%;
@@ -140,7 +140,7 @@
   padding: 1rem;
   max-width: 30%;
   min-width: 200px;
-  background: #ffffff;
+  background: #787878;
   border-radius: 1rem;
   position: fixed;
   top: 50%;
@@ -153,6 +153,11 @@
   flex-wrap: wrap;
   gap: 20px;
   padding: 1rem;
+}
+
+#drop-btn {
+  background-color: red;
+  font-weight: bolder;
 }
 
 #add-note-popup button {

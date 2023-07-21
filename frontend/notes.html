@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="title">Time Frame |</title>
-    <link rel="stylesheet" href="./style/dashboard.css">
+    <title id="title">Timerlia</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link rel="stylesheet" href="./css/notes.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -16,7 +14,7 @@
 <body>
     <nav>
 
-        <div class="logo-img"><a href="index.html"> <img src="./images/Time Frame (1).png" alt="logo"></div></a>
+        <div class="logo-img"><a href="index.html"> <img src="" alt="logo"></div></a>
         <div id="menu-option">
             <a href="index.html"><button>Home</button></a>
             <a href="signin.html"><button>Dashbord</button></a>
@@ -47,18 +45,11 @@
                 <button class="timer-button" id="add-note-button">Take Note</button>
             </div>
             <div id="dash-container">
-                <div id="arrival-time">
-                    <h3>Your First Note</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nihil natus reiciendis consectetur eos numquam magnam impedit. Sapiente, doloremque quod corrupti aspernatur fuga incidunt sint repudiandae reiciendis hic. Perferendis, cum!</p>
-                    <span>
-                        <button>Delete</button>
-                        <button>Edit</button>
-                    </span>
-                </div>
+                
             </div>
         </div>
         <div id="activity-popup" class="hidden">
-            <h2>Select Activity Type</h2>
+            <h2>Select Note Priority</h2>
             <div>
               <button class="activity-button" id="productive-button">High</button>
             <button class="activity-button" id="unproductive-button">Medium</button>
@@ -66,11 +57,14 @@
             </div>
         </div>
         <div id="add-note-popup" class="hidden">
-            <h2>Write Down Here</h2>
+            <span>
+                <h2>Write Down Here</h2>
+            </span>
             <div>
-                <input type="text" name="" id="" placeholder="Title">
-             <textarea name="" id="" cols="30" rows="10">Enter Your text here</textarea>
-             <button>Save Note</button>
+            <input type="text" id="notetitle" class="titlefornote" placeholder="Title">
+             <textarea name="" id="note" cols="30" rows="10">Enter Your text here</textarea>
+             <button id="saveBtn">Save Note</button>
+             <button id="drop-btn">Cancel</button>
             </div>
         </div>
     </div>
