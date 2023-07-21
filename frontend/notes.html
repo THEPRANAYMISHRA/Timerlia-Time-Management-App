@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Time Frame |</title>
+    <link rel="stylesheet" href="./style/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="./css/notes.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+
+<body>
+    <nav>
+
+        <div class="logo-img"><a href="index.html"> <img src="./images/Time Frame (1).png" alt="logo"></div></a>
+        <div id="menu-option">
+            <a href="index.html"><button>Home</button></a>
+            <a href="signin.html"><button>Dashbord</button></a>
+            <a href="#"><button>FAQ</button></a>
+            <a href="#"><button>Blogs</button></a>
+            <a href=""><button>Services</button></a>
+        </div>
+        <a id="hamburger" href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <div class="login-signup">
+            <a href="index.html"><button>Logout</button></a>
+        </div>
+
+    </nav>
+
+    <div id="container">
+      <div id="dash-menu">
+        <a href="./index.html"><h1>TimerLia</h1></a>
+        <a href="/frontend/dashboard.html"><i class='bx bx-timer'></i>Track Time</a>
+        <a href="/frontend/reports.html"><i class='bx bx-bar-chart-alt-2'></i>Reports</a>
+        <a href="/frontend/notes.html"><i class='bx bx-bar-chart-alt-2'></i>Take Notes</a>
+        <a href="#">Logout</a>
+    </div>
+        <div id="main-dash"> 
+            <h1>Your Notes</h1>
+            <div class="Start-container">
+                <button class="timer-button" id="add-note-button">Take Note</button>
+            </div>
+            <div id="dash-container">
+                <div id="arrival-time">
+                    <h3>Your First Note</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nihil natus reiciendis consectetur eos numquam magnam impedit. Sapiente, doloremque quod corrupti aspernatur fuga incidunt sint repudiandae reiciendis hic. Perferendis, cum!</p>
+                    <span>
+                        <button>Delete</button>
+                        <button>Edit</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div id="activity-popup" class="hidden">
+            <h2>Select Activity Type</h2>
+            <div>
+              <button class="activity-button" id="productive-button">High</button>
+            <button class="activity-button" id="unproductive-button">Medium</button>
+            <button class="activity-button" id="idle-button">Low</button>
+            </div>
+        </div>
+        <div id="add-note-popup" class="hidden">
+            <h2>Write Down Here</h2>
+            <div>
+                <input type="text" name="" id="" placeholder="Title">
+             <textarea name="" id="" cols="30" rows="10">Enter Your text here</textarea>
+             <button>Save Note</button>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+
+</html>
+<script src="./scripts/notes.js"></script>
