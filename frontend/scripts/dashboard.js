@@ -172,7 +172,7 @@ timerButton.addEventListener("click", () => {
         localStorage.setItem("idletime", idleTimeElapsed)
         localStorage.setItem("desktime", deskTimeElapsed)
         localStorage.setItem("timeatwork", timeAtWorkTimeElapsed)
-        fetch(`https://zany-jade-kingfisher-ring.cyclic.app/app/myTimeFrame`, {
+        fetch(`https://timerlia.onrender.com/app/myTimeFrame`, {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
