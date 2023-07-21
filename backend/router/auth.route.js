@@ -3,8 +3,8 @@
    const express=require("express")
    const bcrypt=require("bcrypt")
    const jwt=require("jsonwebtoken")
-   const userModel=require("../models/usermodel")
-   const  passport  = require("../connection/google.Oauth");
+   const userModel=require("../model/user.model")
+   const  passport  = require("../config/google.Oauth");
    const authrouter=express.Router()
    authrouter.get(
     "/google",
@@ -56,7 +56,7 @@ function token_Generator(res, name, id,image) {
         { expiresIn: "6d" }
     );
     
-    const redirectUrl = `http://127.0.0.1:5500/frontend/index.html?token=${token}&username=${name}&image=${image}`;
+    const redirectUrl = `http://127.0.0.1:5501/frontend/index.html?token=${token}&username=${name}&image=${image}`;
 
     res.redirect(redirectUrl);
 }
