@@ -6,10 +6,17 @@ let dropButton = document.getElementById('drop-btn');
 let saveButton = document.getElementById('saveBtn');
 let priority;
 let dash_container = document.getElementById('dash-container')
+let token = localStorage.getItem('token')
 
 
 window.onload = () => {
-    fetch('https://timerlia.onrender.com/note/mynotes')
+    fetch('https://timerlia.onrender.com/note/mynotes', {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+        }
+    })
         .then((res) => res.json())
         .then((data) => displaycards(data))
         .catch((err) => alert('Failed to fetch!'))
@@ -44,7 +51,8 @@ saveButton.addEventListener('click', () => {
     fetch('https://timerlia.onrender.com/note/mynotes', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
         },
         body: JSON.stringify(payload)
     }).then((res) => res.json())
