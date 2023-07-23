@@ -78,7 +78,6 @@ function displaycards(arr) {
         <p>${ele.note}</p>
         <span>
             <button onclick="deleteNote('${ele._id}')">Delete</button>
-            <button>Edit</button>
         </span>
     </div>`
     }).join('')

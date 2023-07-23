@@ -19,10 +19,10 @@ notesRouter.get('/mynotes', async (req, res) => {
 })
 
 notesRouter.post('/mynotes', async (req, res) => {
-    const { email, title, note } = req.body;
+    const { email, title, note, priority } = req.body;
 
     try {
-        let newNote = new NotesModel({ email, title, note })
+        let newNote = new NotesModel({ email, title, note, priority })
         await newNote.save()
         return res.send({ "msg": "Note has been created!" })
     } catch (error) {

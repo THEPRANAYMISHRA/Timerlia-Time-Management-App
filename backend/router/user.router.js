@@ -39,8 +39,6 @@ userrout.post("/signup", async (req, res) => {
         res.send({ "msg": "waiting for otp verification" })
 
     }
-
-
     catch (error) {
         console.log(error)
         res.send({ "error": error.message })
@@ -71,7 +69,7 @@ userrout.post("/login", async (req, res) => {
             }
         }
         else {
-            res.send({ "msg": "wrong credential" })
+            res.send({ "msg": "No such user present!" })
         }
     }
     catch (error) {
