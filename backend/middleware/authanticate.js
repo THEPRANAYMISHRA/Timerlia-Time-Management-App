@@ -5,7 +5,7 @@ const authanticate = async (req,res,next)=>
 {
     try
      {
-        const {token}=req.cookies
+        const {token}=req.cookies || req.headers.authorization
         const {email}=req.cookies
         const blacklist=await client.get("blacklist")
 
