@@ -181,7 +181,6 @@ userrout.post("/login", async (req, res) => {
     try {
         const { email, password } = req.body
         const user = await usermodel.findOne({ email })
-        console.log(email, password)
 
         if (user) {
             const matchPassword = bcrypt.compare(password, user.password)
@@ -208,8 +207,8 @@ userrout.post("/login", async (req, res) => {
 
 userrout.get("/logout", async (req, res) => {
     try {
-        const { token } = req.cookies
-        await client.set("blacklist", token)
+        const token = req.cookies.token || req.headers.authorization.split(" ")[1]
+        await client.set(token, token)
         res.send({ "msg": "Logout successfully done" })
     }
     catch (error) {

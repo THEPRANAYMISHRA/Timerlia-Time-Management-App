@@ -18,8 +18,14 @@ window.onload = () => {
         }
     })
         .then((res) => res.json())
-        .then((data) => displaycards(data))
-        .catch((err) => alert('Failed to fetch!'))
+        .then((data) => {
+            if (data.length > 0) {
+                displaycards(data)
+            } else {
+                dash_container.innerHTML = 'No notes are found assosiated with this account'
+            }
+        })
+        .catch((err) => alert(data.msg))
 }
 
 addNoteButton.addEventListener('click', () => {
@@ -56,7 +62,10 @@ saveButton.addEventListener('click', () => {
         },
         body: JSON.stringify(payload)
     }).then((res) => res.json())
-        .then((data) => alert(data.msg))
+        .then((data) => {
+            alert(data.msg);
+            window.location.reload();
+        })
         .catch((err) => alert('Failed to add!'))
 });
 
@@ -79,10 +88,16 @@ function displaycards(arr) {
 
 
 function deleteNote(id) {
-
     fetch(`https://timerlia.onrender.com/note/mynotes/${id}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+        }
     }).then((res) => res.json())
-        .then((data) => alert(data.msg))
+        .then((data) => {
+            alert(data.msg)
+            window.location.reload();
+        })
         .catch((err) => alert('Failed to delete!'))
 }

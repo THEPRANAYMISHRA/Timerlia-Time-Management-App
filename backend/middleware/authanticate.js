@@ -5,10 +5,10 @@ const authanticate = async (req, res, next) => {
     try {
         const token = req.cookies.token || req.headers.authorization.split(" ")[1]
         const { email } = req.cookies
-        const blacklist = await client.get("blacklist")
+        const blacklist = await client.get(token)
 
         if (token == blacklist) {
-            return res.send({ "msg": "Please login again" })
+            return res.send({ "msg": "Session expired,Please login again" })
         }
 
         const decoded = jwt.verify(token, process.env.jwtSecretKey)
