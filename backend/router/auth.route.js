@@ -56,7 +56,8 @@ function token_Generator(res, name, id,image) {
         { expiresIn: "6d" }
     );
     
-    const redirectUrl = `http://127.0.0.1:5501/frontend/index.html?token=${token}&username=${name}&image=${image}`;
+    // const redirectUrl = `http://127.0.0.1:5501/frontend/index.html?token=${token}&username=${name}&image=${image}`;
+    const redirectUrl = `http://127.0.0.1:5501/frontend/index.html?token=${token}&username=${name}`;
 
     res.redirect(redirectUrl);
 }

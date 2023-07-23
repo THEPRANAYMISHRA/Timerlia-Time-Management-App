@@ -1,12 +1,14 @@
 const { client } = require("../config/redis");
 const jwt = require("jsonwebtoken")
 
+
 const authanticate = async (req, res, next) => {
     try {
         const token = req.cookies.token || req.headers.authorization.split(" ")[1]
         console.log(token)
         const { email } = req.cookies
         const blacklist = await client.get(token)
+
 
         if (token == blacklist) {
             return res.send({ "msg": "Session expired,Please login again" })
