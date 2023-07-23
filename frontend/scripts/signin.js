@@ -26,7 +26,7 @@ document.getElementById("form").addEventListener("submit", (e) => {
 
             }
             else if (res.error) {
-                alert(res.error)
+                alert(res.msg)
             }
             else {
                 alert(res.msg)
