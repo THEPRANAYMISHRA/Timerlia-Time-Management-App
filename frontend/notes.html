@@ -37,7 +37,7 @@
         <a href="/frontend/dashboard.html"><i class='bx bx-timer'></i>Track Time</a>
         <a href="/frontend/reports.html"><i class='bx bx-bar-chart-alt-2'></i>Reports</a>
         <a href="/frontend/notes.html"><i class='bx bx-bar-chart-alt-2'></i>Take Notes</a>
-        <a href="#">Logout</a>
+        <a href="#" onclick="localStorage.clear(),window.location.href='./index.html'">Logout</a>
     </div>
         <div id="main-dash"> 
             <h1>Your Notes</h1>
@@ -45,7 +45,8 @@
                 <button class="timer-button" id="add-note-button">Take Note</button>
             </div>
             <div id="dash-container">
-                
+                <!-- note will load here -->
+                <p>Loading..</p>
             </div>
         </div>
         <div id="activity-popup" class="hidden">
