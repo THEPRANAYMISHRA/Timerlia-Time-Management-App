@@ -51,7 +51,8 @@ saveButton.addEventListener('click', () => {
     fetch('https://timerlia.onrender.com/note/mynotes', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
         },
         body: JSON.stringify(payload)
     }).then((res) => res.json())
