@@ -7,6 +7,12 @@
 TECH STACK USED:
 NODEJS | MongoDB | Express | HTML | CSS | JAVASCRIPT
 
+# Backend Deployed Link
+https://timerlia.onrender.com
+
+# FrontEnd Deployed Link
+https://timerlia.netlify.app/
+
 # Landing page
 
 ![one](https://github.com/mayki21/billowy-growth-1168/assets/119392202/c65df7dc-6b25-427a-8718-2e2e5d36aa62)
