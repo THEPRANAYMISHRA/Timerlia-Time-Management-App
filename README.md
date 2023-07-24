@@ -56,10 +56,12 @@ https://timerlia.netlify.app/
 
 # Mobile Views(Responsiveness)
 
-![WhatsApp Image 2023-07-24 at 3 04 49 PM (2)](https://github.com/mayki21/billowy-growth-1168/assets/119392202/60886e8c-be5f-43bc-8835-56380dceb2f7)
-![WhatsApp Image 2023-07-24 at 3 04 49 PM (1)](https://github.com/mayki21/billowy-growth-1168/assets/119392202/d8b355f7-48b8-4fd4-afc1-0051871238c5)
-![WhatsApp Image 2023-07-24 at 3 04 49 PM](https://github.com/mayki21/billowy-growth-1168/assets/119392202/ee6c3775-31f5-4844-9abf-5a3db6bb7464)
-![WhatsApp Image 2023-07-24 at 3 04 48 PM](https://github.com/mayki21/billowy-growth-1168/assets/119392202/1e05793a-cd16-4e7b-bf25-fd30976482e9)
+<p align="center">
+  <img src="https://github.com/mayki21/billowy-growth-1168/assets/119392202/60886e8c-be5f-43bc-8835-56380dceb2f7" alt="Mobile View 1" width="200" />
+  <img src="https://github.com/mayki21/billowy-growth-1168/assets/119392202/d8b355f7-48b8-4fd4-afc1-0051871238c5" alt="Mobile View 2" width="200" />
+  <img src="https://github.com/mayki21/billowy-growth-1168/assets/119392202/ee6c3775-31f5-4844-9abf-5a3db6bb7464" alt="Mobile View 3" width="200" />
+  <img src="https://github.com/mayki21/billowy-growth-1168/assets/119392202/1e05793a-cd16-4e7b-bf25-fd30976482e9" alt="Mobile View 4" width="200" />
+</p>
 
 
 # Group Members
