@@ -4,11 +4,15 @@
 
 Timeria is a powerful real-time time tracking application that allows users to accurately and automatically track the time spent on various tasks and projects. It is designed to help businesses and professionals manage their time effectively and improve productivity.
 
-## Tech Stack
+## Tech-Stack 🛠️
 
-The application is built using the following technologies:
-- **Backend**: NODEJS | MongoDB | Express
-- **Frontend**: HTML | CSS | JAVASCRIPT
+- HTML
+- CSS
+- JavaScript
+- Node.js
+- MongoDB
+- Express.js
+- JWT
 
 ## Demo Links
 
